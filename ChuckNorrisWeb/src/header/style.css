@@ -1,0 +1,17 @@
+#logo_conteiner{
+    background-color: #EAC696;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    top: 0;
+    border-bottom: 3px solid #65451F;
+}
+#logo{
+    margin: 0 auto;
+    width: 50px;
+}
+#title{
+    display: none;
+    color: black;
+}

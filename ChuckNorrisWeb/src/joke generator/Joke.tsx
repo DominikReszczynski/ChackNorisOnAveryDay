@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { TranslatorProvider, useTranslate } from "react-translate";
 export const Joke = () => {
   const [chuckNorrisJoke, setChuckNorrisJoke] = useState();
   const [chuckNorrisJokePL, setChuckNorrisJokePL] = useState();
@@ -43,7 +42,7 @@ export const Joke = () => {
   return (
     <>
       <p>{translate ? chuckNorrisJokePL : chuckNorrisJoke}</p>
-      <button onClick={() => setTranslate(!translate)}>{`change on ${
+      <button onClick={() => setTranslate(!translate)}>{`${
         translate ? "ENG" : "PL"
       }`}</button>
     </>

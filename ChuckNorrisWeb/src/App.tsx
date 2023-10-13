@@ -1,26 +1,26 @@
-import { useState } from 'react'
-import './App.css'
-import { Joke } from './Joke'
-function App() {
-  const [count, setCount] = useState(0)
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import { Joke } from "./joke generator/Joke";
 
+import { AppHeader } from "./header/header";
+function App() {
+  const [time, setTime] = useState(new Date());
+
+  setInterval(() => {
+    setTime(new Date());
+  }, 1000); // Aktualizuje czas co minutę
   return (
     <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <Joke/>
+      <AppHeader />
+      <p>Do następnego żartu:</p>
+      <h3>{`${24 - time.getHours() < 10 ? "0" : ""}${24 - time.getHours()}:${
+        60 - time.getMinutes() < 10 ? "0" : ""
+      }${60 - time.getMinutes()}:${60 - time.getSeconds() < 10 ? "0" : ""}${
+        60 - time.getSeconds()
+      }`}</h3>
+      <Joke />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
