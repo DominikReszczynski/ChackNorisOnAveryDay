@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Logo from "../assets/hat.svg";
+import Logo from "../../assets/hat.svg";
 import "./style.css";
 export const AppHeader = () => {
   return (
