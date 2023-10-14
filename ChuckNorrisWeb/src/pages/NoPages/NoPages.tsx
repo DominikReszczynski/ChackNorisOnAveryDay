@@ -1,5 +1,5 @@
 import ChuckNorisLogo from "../../assets/ChuckNorrisLogo.svg";
-const NoPage = () => {
+export const NoPage = () => {
   return (
     <>
       <img src={ChuckNorisLogo} alt="bad request" />
@@ -7,5 +7,3 @@ const NoPage = () => {
     </>
   );
 };
-
-export default NoPage;

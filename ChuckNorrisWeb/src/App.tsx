@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./Layout/Layout";
-import Home from "./pages/Home/Home";
-import NoPage from "./pages/NoPages/NoPages";
+import { Layout } from "./Layout/Layout.tsx";
+import { Home } from "./pages/Home/Home.tsx";
+import { NoPage } from "./pages/NoPages/NoPages.tsx";
 import { Joke } from "./pages/Joke/joke generator/Joke";
 
 export default function App() {

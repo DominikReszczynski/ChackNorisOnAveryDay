@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Logo from "../../assets/hat.svg";
+import Hamburger from "../../assets/Hamburger_icon.svg.png";
 import "./style.css";
 export const AppHeader = () => {
   return (
@@ -9,7 +10,7 @@ export const AppHeader = () => {
       </Link>
       <input id="menu-toggle" type="checkbox" />
       <label className="menu-button-container" htmlFor="menu-toggle">
-        <div className="menu-button"></div>
+        <img src={Hamburger} alt="" />
       </label>
       <ul className="menu">
         <li>

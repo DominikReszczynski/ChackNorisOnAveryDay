@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { AppHeader } from "./header/header";
-const Layout = () => {
+export const Layout = () => {
   return (
     <>
       <AppHeader />
@@ -9,5 +9,3 @@ const Layout = () => {
     </>
   );
 };
-
-export default Layout;
