@@ -14,12 +14,20 @@ export const AppHeader = () => {
       </label>
       <ul className="menu">
         <li>
-          <Link to="/joke">joke</Link>
+          <Link to="/about">ABOUT</Link>
         </li>
-        <li>Two</li>
-        <li>Three</li>
-        <li>Four</li>
-        <li>Five</li>
+        <li>
+          <Link to="/joke">JOKE</Link>
+        </li>
+        <li>
+          <Link to="/filmography">FILMOGRAPHY</Link>
+        </li>
+        <li>
+          <Link to="game">?GAME?</Link>
+        </li>
+        <li>
+          <Link to="quiz">QUIZ</Link>
+        </li>
       </ul>
     </section>
   );

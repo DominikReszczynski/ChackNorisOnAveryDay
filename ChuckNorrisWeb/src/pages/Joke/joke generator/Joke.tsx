@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./Joke.css";
 import axios from "axios";
 export const Joke = () => {
   const [chuckNorrisJoke, setChuckNorrisJoke] = useState();
@@ -31,7 +32,7 @@ export const Joke = () => {
 
   setInterval(() => {
     setTime(new Date());
-  }, 1000); // Aktualizuje czas co minutę
+  }, 1000);
   useEffect(() => {
     axios
       .post(`https://libretranslate.de/translate`, data)
@@ -44,17 +45,20 @@ export const Joke = () => {
       });
   }, [chuckNorrisJoke]);
   return (
-    <>
+    <div className="site_conteiner">
       <p>Do następnego żartu:</p>
+
       <h3>{`${24 - time.getHours() < 10 ? "0" : ""}${24 - time.getHours()}:${
         60 - time.getMinutes() < 10 ? "0" : ""
       }${60 - time.getMinutes()}:${60 - time.getSeconds() < 10 ? "0" : ""}${
         60 - time.getSeconds()
       }`}</h3>
+
       <p>{translate ? chuckNorrisJokePL : chuckNorrisJoke}</p>
+
       <button onClick={() => setTranslate(!translate)}>{`${
         translate ? "ENG" : "PL"
       }`}</button>
-    </>
+    </div>
   );
 };

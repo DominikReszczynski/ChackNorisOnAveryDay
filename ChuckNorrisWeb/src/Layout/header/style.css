@@ -1,4 +1,5 @@
 .top-nav {
+  
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -17,9 +18,14 @@
   margin: 0;
   padding: 0 0px;
 }
-.menu > li {
+.menu > li a{
+  color: black;
+  font-size: 25px;
   margin: 0 1rem;
   overflow: hidden;
+}
+.menu > li a:hover{
+  color: #B41B30 ;
 }
 .menu-button-container {
   display: none;
