@@ -1,26 +1,21 @@
-import React, { useEffect, useState } from "react";
-import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import NoPage from "./pages/NoPages";
 import { Joke } from "./joke generator/Joke";
 
-import { AppHeader } from "./header/header";
-function App() {
-  const [time, setTime] = useState(new Date());
-
-  setInterval(() => {
-    setTime(new Date());
-  }, 1000); // Aktualizuje czas co minutę
+export default function App() {
   return (
     <>
-      <AppHeader />
-      <p>Do następnego żartu:</p>
-      <h3>{`${24 - time.getHours() < 10 ? "0" : ""}${24 - time.getHours()}:${
-        60 - time.getMinutes() < 10 ? "0" : ""
-      }${60 - time.getMinutes()}:${60 - time.getSeconds() < 10 ? "0" : ""}${
-        60 - time.getSeconds()
-      }`}</h3>
-      <Joke />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="/joke" element={<Joke />} />
+            <Route path="*" element={<NoPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
-
-export default App;
