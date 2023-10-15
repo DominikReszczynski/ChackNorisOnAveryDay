@@ -6,7 +6,7 @@ export const Home = () => {
     <div className="site_conteiner">
       <div id="title_conteiner">
         <h1 id="title">CHUCK NORRIS WEB</h1>
-        <p id="title_footer">WSZYSTKO NA TEMAT CHUCK'A I JEGO PRZYGÓD</p>
+        <p id="title_footer">EVERYTHING YOU WANTED TO KNOW</p>
       </div>
 
       <img
@@ -14,24 +14,9 @@ export const Home = () => {
         src={ChuckNorisLogo}
         alt="bad request"
       />
-      <ul>
-        <li>FULL NAME: CARLOS RAY NORRIS</li>
-        <li>DATE OF BIRTH: 10.03.1940</li>
-        <li>PLACE OF BIRTH: RYAN, OKLACHOMA</li>
-      </ul>
-      <p>
-        Chuck Norris is an American actor, film and television producer, martial
-        arts champion - including a six-time world karate champion. He has
-        English, Scottish and German roots.
-      </p>
-      <p>
-        Norris is known for his roles in films such as "The Delta Force" (1986),
-        "Missing in Action" (1984) and "Walker, Texas Ranger" (1993-2001). In
-        his career, he has starred in more than 30 films and TV series 14.
-      </p>
-      <p>
-        In his spare time, Norris is an active social and charitable activist.
-      </p>
+      <h2 className="appointment_letter">WONTED</h2>
+      <h2 className="appointment_letter">DEAD OR ALIVE</h2>
+      <h2 className="appointment_letter">10.000.000$</h2>
       <img className="sygnature" src={sygnature} alt="" />
     </div>
   );

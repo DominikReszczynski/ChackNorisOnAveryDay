@@ -18,7 +18,16 @@
 .sygnature{
     width: 60vw;
 }
-
+.appointment_letter{
+    color: #B31930;
+    font-size: 100px;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+.appointment_letter:nth-child(2n){
+    font-size: 80px;
+    margin-top: -40px;
+}
 @media screen and (max-width: 700px) {
     #title_conteiner{
     }
@@ -30,5 +39,12 @@
     }
     #title_footer{
         display: none;
+    }
+    .appointment_letter{
+        font-size: 30px;
+    }
+    .appointment_letter:nth-child(2n){
+        font-size: 30px;
+        margin-top: 10px;
     }
 }
