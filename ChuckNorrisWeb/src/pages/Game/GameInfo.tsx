@@ -13,17 +13,17 @@ interface PersonInterface {
 export const Moves: MovesInterface[] = [
   {
     name: "SHOT",
-    power: 2,
+    power: 4,
     accuracy: 95,
   },
   {
     name: "PUNCH",
-    power: 4,
+    power: 8,
     accuracy: 50,
   },
   {
     name: "KICK",
-    power: 3,
+    power: 5,
     accuracy: 75,
   },
   {

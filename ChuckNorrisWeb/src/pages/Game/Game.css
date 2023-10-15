@@ -76,18 +76,3 @@
 #enemy_name{
   display: flex;
 }
-
-.result_info{
-  top: calc(50% - 125px);
-  left: calc(50% - 130px);
-  position: absolute;
-  display: flex;
-  width: 250px;
-  height: 150px;
-  background-color: white;
-  border: 10px solid black;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-}

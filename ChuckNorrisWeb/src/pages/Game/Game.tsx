@@ -1,10 +1,23 @@
+// @ts-nocheck
 import "./Game.css";
 import { Moves, Hero, Badass } from "./GameInfo";
 import chuckNorrisBack from "../../assets/chuckNorrisBack.png";
 import bruceLee from "../../assets/bruceLee.png";
 import { HealthBar } from "./HealthBar/HealthBar";
 import { useEffect, useState } from "react";
-
+import { LoseResult, WinResult } from "./Result/Result";
+export const restart = ({
+  setLose,
+  setWin,
+  setEnemyHealth,
+  setHeroHealth,
+  enemyNumber,
+}) => {
+  setLose(false);
+  setWin(false);
+  setEnemyHealth(Badass[enemyNumber].health);
+  setHeroHealth(Hero.health);
+};
 export const Game = () => {
   const [enemyNumber, setEnemyNumber] = useState<number>(0);
   const [enemyHealth, setEnemyHealth] = useState<number>(0);
@@ -17,33 +30,39 @@ export const Game = () => {
     setEnemyNumber(number);
     setEnemyHealth(Badass[number].health);
   }, []);
+
   useEffect(() => {
-    if (enemyHealth !== Badass[enemyNumber].health) {
-      const number = Math.floor(Math.random() * (Moves.length - 1));
-      console.log("moves number" + number);
-      setHeroHealth(heroHealth - Moves[number].power);
-    }
+    useEnemyMove();
   }, [enemyHealth]);
 
-  const useHeroMove = (movePower, moveName) => {
-    // zadawanie obrażeń przeciwnikowi
-    enemyHealth > movePower
-      ? setEnemyHealth(enemyHealth - movePower)
-      : setEnemyHealth(0);
-    // sprawdzanie wygranej
-    enemyHealth === 0 ? setWin(true) : null;
-    // sprawdzanie przegranej
-    moveName === "RUN" || heroHealth <= 0 ? setLose(true) : null;
+  const useEnemyMove = () => {
+    const randomNumberAccuracy = Math.floor(Math.random() * 100);
+    const moveNumber = Math.floor(Math.random() * (Moves.length - 1));
+    if (
+      enemyHealth !== Badass[enemyNumber].health &&
+      Moves[moveNumber].accuracy > randomNumberAccuracy
+    ) {
+      setHeroHealth(heroHealth - Moves[moveNumber].power);
+    } else console.log("pudło dla wroga");
   };
 
-  const restart = () => {
-    setLose(false);
-    setWin(false);
-    setEnemyHealth(Badass[enemyNumber].health);
-    setHeroHealth(Hero.health);
+  const useHeroMove = (movePower, moveName, moveAccuracy) => {
+    const randomNumberAccuracy = Math.floor(Math.random() * 100);
+    if (moveAccuracy > randomNumberAccuracy) {
+      // zadawanie obrażeń przeciwnikowi
+      enemyHealth > movePower
+        ? setEnemyHealth(enemyHealth - movePower)
+        : setEnemyHealth(0),
+        // sprawdzanie wygranej
+        enemyHealth === 0 ? setWin(true) : null;
+      // sprawdzanie przegranej
+      moveName === "RUN" || heroHealth <= 0 ? setLose(true) : null;
+    } else {
+      console.log("pudło dla bohatera");
+      setEnemyHealth(enemyHealth - 0.01);
+    }
   };
-  console.log(win);
-  console.log("lose" + lose);
+
   return (
     <div className="game_main_container">
       <div className="game_container">
@@ -73,8 +92,9 @@ export const Game = () => {
             return (
               <button
                 key={data.name}
+                disabled={win || lose}
                 onClick={() => {
-                  useHeroMove(data.power, data.name);
+                  useHeroMove(data.power, data.name, data.accuracy);
                 }}
               >
                 {data.name}
@@ -84,16 +104,22 @@ export const Game = () => {
         </div>
       </div>
       {lose && (
-        <div className="result_info">
-          <h2>YOU LOSE</h2>
-          <button onClick={() => restart()}>RESTART</button>
-        </div>
+        <LoseResult
+          setLose={setLose}
+          setWin={setWin}
+          setEnemyHealth={setEnemyHealth}
+          setHeroHealth={setHeroHealth}
+          enemyNumber={enemyNumber}
+        />
       )}
       {win && (
-        <div className="result_info">
-          <h2>YOU WIN</h2>
-          <button onClick={() => restart()}>RESTART</button>
-        </div>
+        <WinResult
+          setLose={setLose}
+          setWin={setWin}
+          setEnemyHealth={setEnemyHealth}
+          setHeroHealth={setHeroHealth}
+          enemyNumber={enemyNumber}
+        />
       )}
     </div>
   );
