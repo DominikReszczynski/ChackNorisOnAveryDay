@@ -1,5 +1,5 @@
 import ChuckNorisLogo from "../../assets/ChuckNorrisLogo.svg";
-import sygnature from "../../assets/1920px-Chuck_Norris'_signature.svg.png";
+import sygnature from "../../assets/1920px-Chuck_Norris_signature.svg.png";
 import "./Home.css";
 export const Home = () => {
   return (
