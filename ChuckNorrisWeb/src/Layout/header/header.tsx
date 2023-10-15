@@ -25,7 +25,7 @@ export const AppHeader = () => {
           <Link to="/filmography">FILMOGRAPHY</Link>
         </li>
         <li>
-          <Link to="game">?GAME?</Link>
+          <Link to="game">GAME</Link>
         </li>
         <li>
           <Link to="quiz">QUIZ</Link>

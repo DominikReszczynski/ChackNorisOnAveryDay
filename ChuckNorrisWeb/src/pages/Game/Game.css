@@ -1,73 +1,93 @@
 .game_main_container {
   font-family: "Press Start 2P", serif;
   color: black;
-    margin: 0 auto;
-    background-color: #C8AE7D;
-    width: 700px;
-    max-height: calc(100vh - 53px);
-    background-size: cover;
-    padding: 0 10px;
-    border-left: 8px solid #65451F;
-    border-right: 8px solid #65451F;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 0px 0px;
-    grid-template-areas:
-      "badass_health badass"
-      "hero hero_health"
-      "moves moves";
-  }
-  
-  .moves {
-    grid-area: moves;
-    background-color: white;
-    border: 10px solid black;
-    width: auto;
-    height: auto;
+  margin: 0 auto;
+  background-size: cover;
+}
+.game_container {
+  font-family: "Press Start 2P", serif;
+  color: black;
+  margin: 0 auto;
+  background-color: #C8AE7D;
+  width: 700px;
+  max-height: calc(100vh - 53px);
+  background-size: cover;
+  border-left: 10px solid black;
+  border-right: 10px solid black;
+  box-sizing: border-box; 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "badass_health badass"
+    "hero hero_health"
+    "moves moves";
+}
+.moves {
+  display: flex;
+  grid-area: moves;
+  background-color: white;
+  border-top: 10px solid black;
+  box-sizing: border-box; 
+  width: auto;
+  height: auto;
+  align-content: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 .moves button {
-    
-    background-color: white;
-    color: black;
-    font-size: 3rem;
+  background-color: white;
+  color: black;
+  font-size: 2.9rem;
 }
-  
-  .hero {
-    grid-area: hero;
-    background-color: black;
-    width: auto;
-    height: auto;
+.hero {
+  grid-area: hero;
+  background-color: grey;
+  width: auto;
+  height: auto;
 }
-  
-  .badass {
-    grid-area: badass;
-    background-color: hotpink;
-    width: auto;
-    height: auto;
-  }
-  
-  .hero_health {
-    display: flex;
-    flex-direction: column;
-    grid-area: hero_health;
-    background-color: saddlebrown;
-    width: auto;
-    height: auto;
-    justify-content: center;
-  }
-  
-  .badass_health {
-    display: flex;
-    flex-direction: column;
-    grid-area: badass_health;
-    width: auto;
-    height: auto;
-    background-color: lawngreen;
-    justify-content: center;
-    align-items: flex-end;
-  }
-  #hero_name,
-  #enemy_name{
-    display: flex;
-  }
+.badass {
+  grid-area: badass;
+  background-color: grey;
+  width: auto;
+  height: auto;
+} 
+.hero_health {
+  display: flex;
+  flex-direction: column;
+  grid-area: hero_health;
+  background-color: grey;
+  width: auto;
+  height: auto;
+  justify-content: center;
+}
+.badass_health {
+  display: flex;
+  flex-direction: column;
+  grid-area: badass_health;
+  width: auto;
+  height: auto;
+  background-color: grey;
+  justify-content: center;
+  align-items: flex-end;
+}
+#hero_name,
+#enemy_name{
+  display: flex;
+}
+
+.result_info{
+  top: calc(50% - 125px);
+  left: calc(50% - 130px);
+  position: absolute;
+  display: flex;
+  width: 250px;
+  height: 150px;
+  background-color: white;
+  border: 10px solid black;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
