@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Howl, Howler } from "howler";
+import { useState } from "react";
+import { Howl } from "howler";
 import { questions } from "./Questions";
 import shotSound from "../../assets/shotSound.mp3";
 import "./Quiz.css";
