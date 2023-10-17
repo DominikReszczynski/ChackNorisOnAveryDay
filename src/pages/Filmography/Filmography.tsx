@@ -1,4 +1,3 @@
-import React from "react";
 import { filmography as chuckNorrisFilmography } from "./ChuckNorrisFilmography";
 import "./Filmography.css";
 export const Filmography = () => {

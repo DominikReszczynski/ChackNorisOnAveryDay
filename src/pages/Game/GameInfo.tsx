@@ -1,4 +1,3 @@
-import bruceLee from "../../assets/bruceLee.png";
 interface MovesInterface {
   name: string;
   power: number;
