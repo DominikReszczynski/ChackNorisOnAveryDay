@@ -1,13 +1,19 @@
 import { restart } from "../Game";
 import "./Result.css";
-
+interface WinLostInterface {
+  setLose: boolean;
+  setWin: boolean;
+  setEnemyHealth: number;
+  setHeroHealth: number;
+  enemyNumber: number;
+}
 export const WinResult = ({
   setLose,
   setWin,
   setEnemyHealth,
   setHeroHealth,
   enemyNumber,
-}) => {
+}: WinLostInterface) => {
   return (
     <div className="result_info">
       <h2>YOU WIN</h2>
@@ -34,7 +40,7 @@ export const LoseResult = ({
   setEnemyHealth,
   setHeroHealth,
   enemyNumber,
-}) => {
+}: WinLostInterface) => {
   return (
     <div className="result_info">
       <h2>YOU LOSE</h2>
