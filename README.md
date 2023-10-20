@@ -1,5 +1,4 @@
-![Logo](./src/assets/hat.svg)
-![Logo](./src/assets/1920px-Chuck_Norris_signature.svg.png)
+![Logo](./src/assets/hat.svg)(./src/assets/1920px-Chuck_Norris_signature.svg.png)
 
 # Chuck Norris Web
 
