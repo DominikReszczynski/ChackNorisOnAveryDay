@@ -1,27 +1,52 @@
-# React + TypeScript + Vite
+![Logo](./src/assets/hat.svg)
+![Logo](./src/assets/1920px-Chuck_Norris_signature.svg.png)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Chuck Norris Web
 
-Currently, two official plugins are available:
+All about Chuck and his adventures
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+URL: https://chack-noris-on-avery-day-4vhw.vercel.app/
 
-## Expanding the ESLint configuration
+## Roadmap
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- finish game
 
-- Configure the top-level `parserOptions` property like this:
+- change filmography to a more attractive one
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+- change quiz to a more attractive one
+
+- change joke to a more attractive one
+
+- change any text in to englis
+
+## API Reference
+
+Official chucknorris.io API WebSite: https://api.chucknorris.io/
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/DominikReszczynski/ChackNorisOnAveryDay.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run dev
+```
+
+## Tech Stack
+
+**Client:** TypeScript, React, Redux, CSS, API
+
+## Authors
+
+- [@DominikReszczynski](https://github.com/DominikReszczynski)
